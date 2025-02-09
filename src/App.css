@@ -1,0 +1,215 @@
+/* =========================================
+   Google Fonts
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* =========================================
+   CSS Variables
+========================================= */
+:root {
+   /* ========== Main colors (HSL - hue, saturation, and lightness) ========== */
+
+   /* Blue - hsl(217, 85%, 74%); */
+   /* Purple - hsl(245, 54%, 74%); */
+   /* Teal - hsl(181, 47%, 49%); */
+   /* Yellow - hsl(65, 60%, 70%); */
+   /* Green - hsl(162, 60%, 65%); */
+   /* Red - hsl(356, 67%, 70%); */
+   /* Pink - hsl(330, 73%, 72%); */
+
+   --hue: 217;
+   --sat: 85%;
+   --light: 74%;
+
+   --primary-color: hsl(var(--hue) var(--sat) var(--light));
+   /* primary */
+   --white-color: hsl(var(--hue) 45% 98%);
+   /* white */
+   --dark-color: hsl(var(--hue) 26% 12%);
+   /* dark */
+
+   /* ======= Changeable colors ======= */
+   --color-01: hsl(var(--hue) var(--sat) var(--light));
+   /* primary to dark */
+   --color-02: hsl(var(--hue) 45% 98%);
+   /* white to dark */
+   --color-03: hsl(var(--hue) 26% 12%);
+   /* dark to white */
+   --color-04: hsl(var(--hue) 0% 62%);
+   /* light-graygray to dark-gray */
+   --color-05: hsl(var(--hue) 26% 12%);
+   /* dark to primary */
+
+   --body-color: hsl(250 26% 12%);
+   /* dark to white */
+   --hover-color: hsl(var(--hue) var(--sat) calc(var(--light) - 7%));
+
+   /* ======= Background colors ======= */
+   --bottom-nav-bg: hsl(var(--hue) 32% 25% / .65);
+   --card-bg: hsl(217deg 30.63% 19.66%);
+   --modal-backdrop-bg: hsl(var(--hue) 54% 74% / .1);
+
+   /* ======= Scrollbar colors ======= */
+   --scrollbar-color: hsl(var(--hue) 25% 20%);
+   --scrollbar-thumb: hsl(var(--hue) var(--sat) var(--light));
+   --scrollbar-thumb-hover: hsl(var(--hue) var(--sat) calc(var(--light) - 7%));
+
+   /* ======= Font and typography ======= */
+   --body-font-family: "Inter", serif;
+
+   /* ======= Font sizes ======= */
+   --h1-font-size: 2.85rem;
+   --h2-font-size: 2.25rem;
+   --h3-font-size: 1.97rem;
+   --h4-font-size: 1.43rem;
+   --h5-font-size: 1.13rem;
+
+   --xlarge-font-size: 1.48rem;
+   --large-font-size: 1.23rem;
+   --medium-font-size: 1.18rem;
+   --base-font-size: 1.1rem;
+   --small-font-size: 1.07rem;
+   --tiny-font-size: .98rem;
+
+   /* ======= Font weights ======= */
+   --font-light: 300;
+   --font-regular: 400;
+   --font-medium: 500;
+   --font-semi-bold: 600;
+   --font-bold: 700;
+
+   /* ======= Layering order(z-index) ======= */
+   --z-minus: -1;
+   --z-base: 0;
+   --z-low: 1;
+   --z-high: 10;
+   --z-menu: 1100;
+   --z-overlay: 1110;
+}
+
+/* =========================================
+    Reset / Normalize
+ ========================================= */
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: var(--body-font-family);
+}
+
+ul,
+li {
+   list-style: none;
+}
+
+a {
+   color: var(--color-04);
+   text-decoration: none;
+   cursor: pointer;
+}
+
+/* =========================================
+    Base Styles
+ ========================================= */
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   color: var(--color-04);
+   background-color: var(--body-color);
+}
+
+/* =========================================
+    Reusable Styles
+ ========================================= */
+
+.container {
+   max-width: 1170px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/* Outline Text Effect */
+
+.text-outline {
+   -webkit-text-stroke: 0.5px #ffffff;
+}
+
+/* Animations */
+
+@keyframes blink {
+   50% {
+      opacity: 0;
+   }
+}
+
+.animate-blink {
+   animation: blink 0.7s infinite;
+}
+
+
+@keyframes scale-infinite {
+
+   0%,
+   100% {
+      transform: scale(1);
+   }
+
+   50% {
+      transform: scale(1.3);
+   }
+}
+
+.animate-scale-infinite {
+   animation: scale-infinite 1.5s linear infinite;
+}
+
+
+/* ========== Page scroll bar ========== */
+::-webkit-scrollbar {
+   width: 0.55vw;
+   background-color: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: var(--scrollbar-thumb);
+   border-radius: 0.88vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background-color: var(--scrollbar-thumb-hover);
+}
+
+/* Hide Scrollbar */
+
+.hide-scrollbar::-webkit-scrollbar {
+   width: 0;
+}
+
+/* ========== Customized cursor ========== */
+
+
+/* ========== Dark/Light theme buttons ========== */
+
+
+/* =========================================
+    Media Queries (max-width: 1600px)
+ ========================================= */
+
+/* =========================================
+    Media Queries (max-width: 1200px)
+ ========================================= */
+
+/* =========================================
+    Media Queries (max-width: 992px)
+ ========================================= */
+
+/* =========================================
+    Media Queries (max-width: 768px)
+ ========================================= */
+
+/* =========================================
+    Media Queries (max-width: 480px)
+ ========================================= */
