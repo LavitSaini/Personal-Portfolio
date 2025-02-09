@@ -143,7 +143,7 @@ const Contact = () => {
             {isSendingEmail ? (
               <>
                 <span className="capitalize text-[0.9rem]">Sending</span>
-                <Loader2 className="size-4whileInView-spin" />
+                <Loader2 className="size-4 animate-spin" />
               </>
             ) : (
               <>
