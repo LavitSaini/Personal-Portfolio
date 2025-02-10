@@ -70,7 +70,7 @@ const Hero = () => {
   return (
     <section
       ref={heroSectionRef}
-      className="container relative px-8 flex items-start py-[5rem] custom-sm:py-12"
+      className="container relative px-8 flex items-start py-[5rem] custom-sm:py-10"
       id="home"
     >
       {iconPositions.map((pos, index) => (
@@ -78,6 +78,7 @@ const Hero = () => {
           key={index}
           src={technologiesIcons[index].url}
           alt={technologiesIcons[index].label}
+          loading="lazy"
           className={`absolute w-9 z-low opacity-40 custom-sm:hidden ${
             technologiesIcons[index].whileInView
               ? "whileInView-scale-infinite"
@@ -113,7 +114,7 @@ const Hero = () => {
                   className="group"
                 >
                   <i
-                    className={`fa fa-${item.icon} text-[1.25rem] text-primary transition duration-100 group-hover:scale-125 group-hover:text-hover`}
+                    className={`${item.icon} text-[1.25rem] text-primary transition duration-100 group-hover:scale-125 group-hover:text-hover`}
                     aria-hidden="true"
                   ></i>
                 </a>
@@ -163,6 +164,7 @@ const Hero = () => {
               src="../assets/images/hero_image.png"
               alt="Hero Image"
               className="w-full relative z-high custom-xl:w-[20rem]"
+              loading="lazy"
             />
           </motion.div>
           <div

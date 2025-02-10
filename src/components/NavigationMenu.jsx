@@ -6,15 +6,22 @@ const NavigationMenu = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
+    const sectionVisibility = {};
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
+          sectionVisibility[entry.target.id] = entry.intersectionRatio;
         });
+
+        const mostVisibleSection = Object.keys(sectionVisibility).reduce(
+          (prev, curr) =>
+            sectionVisibility[curr] > sectionVisibility[prev] ? curr : prev
+        );
+
+        setActiveSection(mostVisibleSection);
       },
-      { threshold: 0.35 }
+      { threshold: [0.25, 0.5, 0.75, 1] }
     );
 
     const sections = document.querySelectorAll("section");

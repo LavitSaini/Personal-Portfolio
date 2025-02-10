@@ -31,7 +31,7 @@ const Projects = () => {
     <section
       ref={projectsSectionRef}
       id="projects"
-      className="container px-8 py-16 custom-sm:py-12"
+      className="container px-8 py-16 custom-sm:py-10"
     >
       <div className="flex flex-col gap-1.5 items-center">
         <h3
@@ -87,15 +87,14 @@ const Projects = () => {
               viewport={{ once: true }}
               onMouseEnter={() => setHoveredProject(project.name)}
               onMouseLeave={() => setHoveredProject(null)}
-              onClick={() =>
-                project.category !== "shopify stores" && openOverlay(project)
-              } // Open overlay for non-shopify stores
+              onClick={() => openOverlay(project)}
             >
               <div className="relative">
                 {project.media.split(".").pop() !== "mp4" ? (
                   <img
                     src={project.media}
                     alt={project.name}
+                    loading="lazy"
                     className="w-full h-full aspect-[3/3] object-cover transition duration-300 rounded-tr-lg rounded-tl-lg group-hover:scale-105"
                   />
                 ) : (
@@ -103,6 +102,7 @@ const Projects = () => {
                     loop
                     autoPlay
                     muted
+                    preload="metadata"
                     className="w-full aspect-[3/3] object-cover rounded-tr-lg rounded-tl-lg transition duration-300 group-hover:scale-105"
                   >
                     <source src={project.media} type="video/mp4" />
@@ -136,7 +136,7 @@ const Projects = () => {
               </div>
               <div className="flex flex-col gap-1 p-4 bg-card shadow-md w-full rounded-bl-lg rounded-br-lg group-hover:rounded-bl-none group-hover:rounded-br-none">
                 <div className="flex justify-between items-center w-full custom-xl:flex-col custom-xl:items-start custom-xl:gap-0.5">
-                  <h3 className="text-white text-[1.1rem] font-semibold text-nowrap truncate custom-xl:text-base">
+                  <h3 className="text-white text-[1.1rem] font-semibold text-nowrap truncate custom-xl:text-[0.95rem] custom-sm:text-[0.85rem] custom-xsm:text-[1rem]">
                     {project.name}
                   </h3>
                   {project.link && (
@@ -167,20 +167,21 @@ const Projects = () => {
       </ul>
 
       {isOverlayVisible && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-overlay">
-          <div className="shadow-sm">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-overlay px-8 custom-lg:px-12 custom-xsm:px-8">
+          <div className="shadow-sm custom-lg:relative">
             <button
-              className="absolute z-high top-5 right-5  text-gray-300 text-2xl cursor-pointer hover:text-white"
+              className="absolute z-high top-5 right-5  text-gray-300 text-2xl cursor-pointer hover:text-white custom-lg:top-0 custom-lg:right-0 custom-lg:p-1.5 custom-lg:bg-white custom-lg:text-neutral-700 custom-lg:hover:text-black"
               onClick={closeOverlay}
             >
-              <CircleX className="size-8" />
+              <CircleX className="size-8 custom-lg:size-6 custom-xsm:size-4" />
             </button>
             {selectedProject.media.split(".").pop() === "mp4" ? (
               <motion.video
                 loop
                 autoPlay
-                muted
-                className="max-w-full max-h-[90vh] object-contain px-8"
+                controls
+                className="max-w-full max-h-[90vh] object-contain"
+                preload="metadata"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5 }}
@@ -193,7 +194,8 @@ const Projects = () => {
               <motion.img
                 src={selectedProject.media}
                 alt={selectedProject.name}
-                className="max-w-full max-h-[90vh] object-contain px-8"
+                loading="lazy"
+                className="max-w-full max-h-[90vh] object-contain"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5 }}

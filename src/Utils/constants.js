@@ -22,23 +22,19 @@ export const navItems = [
 
 export const mediaItems = [
   {
-    label: "linkedin",
-    icon: "linkedin",
-    href: "https://www.linkedin.com/in/sonalika-saini-5554b0196/",
-  },
-  {
     label: "upwork",
-    icon: "briefcase",
+    icon: "fa-brands fa-upwork",
     href: "https://www.upwork.com/freelancers/~01a866f60af1568d12?p=1844996237033086976",
   },
 ];
 
 export const projectsCategories = [
   { label: "Shopify Stores", y: -30 },
-  { label: "Templates", y: 30 },
-  { label: "Posts", y: -30 },
+  { label: "Social Media Posts", y: 30 },
+  { label: "Templates", y: -30 },
   { label: "Logo's", y: 30 },
   { label: "Flyres", y: -30 },
+  { label: "Brochure", y: 30 },
 ];
 
 export const projects = [
@@ -175,28 +171,28 @@ export const projects = [
   {
     name: "Financial Success",
     media: "../assets/images/projects_images/financial_success.jpg",
-    category: "posts",
+    category: "social media posts",
     description: null,
     link: null,
   },
   {
     name: "Marketing Fundamentals",
     media: "../assets/images/projects_images/marketing_fundamentals.jpg",
-    category: "posts",
+    category: "social media posts",
     description: null,
     link: null,
   },
   {
     name: "Marketing",
     media: "../assets/videos/projects_videos/marketing.mp4",
-    category: "posts",
+    category: "social media posts",
     description: null,
     link: null,
   },
   {
     name: "Creative Marketing Ayency",
     media: "../assets/videos/projects_videos/creative_marketing_ayency.mp4",
-    category: "posts",
+    category: "social media posts",
     description: null,
     link: null,
   },
@@ -210,7 +206,7 @@ export const projects = [
   {
     name: "Serenity Grand Hotel",
     media: "../assets/images/projects_images/serenity_grand_hotel.png",
-    category: "flyres",
+    category: "brochure",
     description: null,
     link: null,
   },
@@ -224,7 +220,7 @@ export const projects = [
   {
     name: "The Larana's",
     media: "../assets/images/projects_images/the_larana's.png",
-    category: "flyres",
+    category: "brochure",
     description: null,
     link: null,
   },

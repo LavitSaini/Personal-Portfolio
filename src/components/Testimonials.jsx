@@ -44,7 +44,7 @@ const Testimonials = () => {
   }, [isHovered]);
 
   return (
-    <section className="container px-8 py-16 custom-sm:py-12" id="testimonials">
+    <section className="container px-8 py-16 custom-sm:py-10" id="testimonials">
       <div className="flex flex-col gap-1.5 items-center">
         <h3 className="text-3xl text-primary font-bold capitalize">
           Testimonials
