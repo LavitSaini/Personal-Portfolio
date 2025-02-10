@@ -23,7 +23,7 @@ export const navItems = [
 export const mediaItems = [
   {
     label: "upwork",
-    icon: "fa-brands fa-upwork",
+    icon: "../assets/images/upwork.png",
     href: "https://www.upwork.com/freelancers/~01a866f60af1568d12?p=1844996237033086976",
   },
 ];

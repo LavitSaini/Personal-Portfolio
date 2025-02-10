@@ -112,10 +112,11 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <i
-                    className={`${item.icon} text-[1.25rem] text-primary transition duration-100 group-hover:scale-125 group-hover:text-hover`}
-                    aria-hidden="true"
-                  ></i>
+                  <img
+                    src={item.icon}
+                    alt={item.label}
+                    className="w-9 transition duration-200 ease-linear group-hover:scale-[1.2]"
+                  />
                 </a>
               </li>
             ))}
@@ -142,10 +143,11 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <i
-                    className={`fa fa-${item.icon} text-[1.25rem] text-primary transition duration-100 group-hover:scale-125 group-hover:text-hover`}
-                    aria-hidden="true"
-                  ></i>
+                  <img
+                    src={item.icon}
+                    alt={item.label}
+                    className="w-9 transition duration-200 ease-linear group-hover:scale-[1.2]"
+                  />
                 </a>
               </li>
             ))}
