@@ -78,7 +78,6 @@ const Hero = () => {
           key={index}
           src={technologiesIcons[index].url}
           alt={technologiesIcons[index].label}
-          loading="lazy"
           className={`absolute w-9 z-low opacity-40 custom-sm:hidden ${
             technologiesIcons[index].whileInView
               ? "whileInView-scale-infinite"
@@ -164,7 +163,6 @@ const Hero = () => {
               src="../assets/images/hero_image.png"
               alt="Hero Image"
               className="w-full relative z-high custom-xl:w-[20rem]"
-              loading="lazy"
             />
           </motion.div>
           <div

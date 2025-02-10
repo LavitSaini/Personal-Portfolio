@@ -94,7 +94,6 @@ const Projects = () => {
                   <img
                     src={project.media}
                     alt={project.name}
-                    loading="lazy"
                     className="w-full h-full aspect-[3/3] object-cover transition duration-300 rounded-tr-lg rounded-tl-lg group-hover:scale-105"
                   />
                 ) : (
@@ -102,7 +101,6 @@ const Projects = () => {
                     loop
                     autoPlay
                     muted
-                    preload="metadata"
                     className="w-full aspect-[3/3] object-cover rounded-tr-lg rounded-tl-lg transition duration-300 group-hover:scale-105"
                   >
                     <source src={project.media} type="video/mp4" />
@@ -181,7 +179,6 @@ const Projects = () => {
                 autoPlay
                 controls
                 className="max-w-full max-h-[90vh] object-contain"
-                preload="metadata"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5 }}
@@ -194,7 +191,6 @@ const Projects = () => {
               <motion.img
                 src={selectedProject.media}
                 alt={selectedProject.name}
-                loading="lazy"
                 className="max-w-full max-h-[90vh] object-contain"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
