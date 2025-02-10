@@ -62,7 +62,7 @@ const Contact = () => {
 
   return (
     <section
-      className="container px-8 pt-16 pb-28 flex flex-col gap-12 items-center custom-sm:py-12"
+      className="container px-8 pt-16 pb-36 flex flex-col gap-12 items-center custom-sm:py-12"
       id="contact"
     >
       <div className="flex flex-col gap-1.5 items-center">
